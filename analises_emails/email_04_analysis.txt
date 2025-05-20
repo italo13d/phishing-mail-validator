@@ -1,8 +1,8 @@
 {
-  "classification": "PHISHING",
+  "classification": "SAFE",
   "reasons": [
-    "links encurtados não oficiais redirecionando para domínios suspeitos",
-    "conteúdo de origem duvidosa e excesso de caracteres estranhos",
-    "falta de contexto sobre a legitimidade do evento mencionado"
+    "e-mail contém informações sobre um evento oficial da NVIDIA",
+    "links direcionam para domínios oficiais da NVIDIA",
+    "remetente é o endereço de e-mail news@nvidia.com"
   ]
 }

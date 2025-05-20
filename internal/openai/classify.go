@@ -2,33 +2,43 @@ package openai
 
 import (
 	"context"
+	"log"
+	"os"
+	"strings"
 
 	openai "github.com/sashabaranov/go-openai"
 )
 
 type Classifier struct {
-	cli *openai.Client
-	sys string
+	cli       *openai.Client
+	sysPrompt string // ← voltou
 }
 
-func NewClassifier(apiKey, systemPrompt string) *Classifier {
+func NewClassifier(apiKey, promptPath string) *Classifier {
+	raw, err := os.ReadFile(promptPath)
+	if err != nil {
+		log.Fatalf("falha lendo prompt: %v", err)
+	}
+	cli := openai.NewClient(apiKey)
+
 	return &Classifier{
-		cli: openai.NewClient(apiKey),
-		sys: systemPrompt,
+		cli:       cli,
+		sysPrompt: strings.TrimSpace(string(raw)),
 	}
 }
 
-func (c *Classifier) Analyse(ctx context.Context, input string) (string, error) {
-	resp, err := c.cli.CreateChatCompletion(ctx, openai.ChatCompletionRequest{
+func (c *Classifier) Analyse(ctx context.Context, body string) (string, error) {
+	req := openai.ChatCompletionRequest{
 		Model: openai.GPT3Dot5Turbo,
 		Messages: []openai.ChatCompletionMessage{
-			{Role: "system", Content: c.sys},
-			{Role: "user", Content: input},
+			{Role: "system", Content: c.sysPrompt}, // ← garante o prompt
+			{Role: "user", Content: body},
 		},
-		MaxTokens: 180,
-	})
+		Temperature: 0,
+	}
+	resp, err := c.cli.CreateChatCompletion(ctx, req)
 	if err != nil {
 		return "", err
 	}
-	return resp.Choices[0].Message.Content, nil
+	return strings.TrimSpace(resp.Choices[0].Message.Content), nil
 }

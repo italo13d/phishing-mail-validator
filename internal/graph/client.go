@@ -1,45 +1,72 @@
+// internal/graph/client.go
 package graph
 
 import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"io"
 	"net/http"
 )
 
-type Client struct {
-	token string
-	http  *http.Client
+// Message representa o que você precisa de cada e-mail
+type Message struct {
+	ID      string `json:"id"`
+	Subject string `json:"subject"`
+	Body    struct {
+		Content string `json:"content"`
+	} `json:"body"`
+	From struct {
+		EmailAddress struct {
+			Address string `json:"address"`
+		} `json:"emailAddress"`
+	} `json:"from"`
+	ToRecipients []struct {
+		EmailAddress struct {
+			Address string `json:"address"`
+		} `json:"emailAddress"`
+	} `json:"toRecipients"`
 }
 
-func NewClient(token string, hc *http.Client) *Client { … }
+type listResp struct {
+	Value []Message `json:"value"`
+}
 
-func (c *Client) GetJunkEmails(ctx context.Context, top int) ([]Email, error) {
-	req, _ := http.NewRequestWithContext(ctx, "GET",
-		fmt.Sprintf(
-			"https://graph.microsoft.com/v1.0/me/mailFolders/JunkEmail/messages?$top=%d", top),
-		nil)
+// Client é o seu wrapper de Graph
+type Client struct {
+	token   string
+	httpcli *http.Client
+}
+
+// NewClient cria um Graph client com Bearer token
+func NewClient(token string, httpcli *http.Client) *Client {
+	return &Client{token: token, httpcli: httpcli}
+}
+
+// GetJunkEmails busca até `top` mensagens da pasta JunkEmail
+func (c *Client) GetJunkEmails(ctx context.Context, top int) ([]Message, error) {
+	url := fmt.Sprintf("https://graph.microsoft.com/v1.0/me/mailFolders/JunkEmail/messages?$top=%d", top)
+	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
+	if err != nil {
+		return nil, err
+	}
 	req.Header.Set("Authorization", "Bearer "+c.token)
 	req.Header.Set("Accept", "application/json")
 
-	res, err := c.http.Do(req)
-	if err != nil { return nil, fmt.Errorf("http: %w", err) }
+	res, err := c.httpcli.Do(req)
+	if err != nil {
+		return nil, err
+	}
 	defer res.Body.Close()
 
 	if res.StatusCode != http.StatusOK {
-		return nil, fmt.Errorf("graph bad status: %s", res.Status)
+		b, _ := io.ReadAll(res.Body)
+		return nil, fmt.Errorf("graph returned %d: %s", res.StatusCode, string(b))
 	}
 
-	var lr struct{ Value []Email `json:"value"` }
+	var lr listResp
 	if err := json.NewDecoder(res.Body).Decode(&lr); err != nil {
-		return nil, fmt.Errorf("decode: %w", err)
+		return nil, err
 	}
 	return lr.Value, nil
-}
-
-type Email struct {
-	ID, Subject string
-	From        string
-	To          string
-	BodyHTML    string
 }

@@ -1,8 +1,8 @@
 {
-  "classification": "SAFE",
-  "reasons": [
-    "promoção de curso online",
-    "bônus e certificados como incentivo",
-    "opção de descadastro clara e explícita"
-  ]
+	"classification": "SAFE",
+	"reasons": [
+		"conteúdo promocional de curso",
+		"links diretos para páginas oficiais da empresa",
+		"textos incentivadores sem indícios de phishing"
+	]
 }

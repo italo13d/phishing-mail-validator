@@ -1,8 +1,8 @@
 {
-  "classification": "PHISHING",
-  "reasons": [
-    "solicitação de ação urgente sob ameaça de bloqueio",
-    "link suspeito para regularização em domínio não oficial",
-    "ameaças de consequências graves e irreversíveis em caso de não conformidade"
-  ]
+	"classification": "PHISHING",
+	"reasons": [
+		"solicitação de ação imediata com ameaças de bloqueio e penalidades",
+		"link suspeito apontando para domínio não oficial",
+		"ameaça de cancelamento permanente sem possibilidade de recurso"
+	]
 }

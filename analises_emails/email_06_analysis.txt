@@ -1,8 +1,8 @@
 {
   "classification": "PHISHING",
   "reasons": [
-    "link suspeito apontando para domínio diferente",
-    "solicita pagamento para liberar entrega",
-    "instruções de pagamento não condizentes com procedimentos oficiais dos Correios"
+    "link suspeito redirecionando para domínio diferente do esperado",
+    "solicitação de pagamento de taxas sem confirmação oficial da alfândega",
+    "email com tom de urgência e ameaça de cancelamento para pressionar a vítima"
   ]
 }

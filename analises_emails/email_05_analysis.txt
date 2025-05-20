@@ -1,8 +1,4 @@
 {
   "classification": "SAFE",
-  "reasons": [
-    "E-mail promovendo lançamento de curso",
-    "Conteúdo informativo sobre MBA em Engenharia de Software com IA",
-    "Links para cadastro em lista de interesse e gerenciamento de preferências"
-  ]
+  "reasons": []
 }

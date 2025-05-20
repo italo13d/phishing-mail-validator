@@ -1,4 +1,8 @@
 {
   "classification": "SAFE",
-  "reasons": []
+  "reasons": [
+    "email contém apenas informações sobre um novo podcast do Observador",
+    "links direcionam para domínio oficial do Observador",
+    "opção clara de descadastro da newsletter"
+  ]
 }
