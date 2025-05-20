@@ -1,0 +1,8 @@
+{
+  "classification": "PHISHING",
+  "reasons": [
+    "link suspeito apontando para domínio diferente",
+    "solicita pagamento para liberar entrega",
+    "instruções de pagamento não condizentes com procedimentos oficiais dos Correios"
+  ]
+}

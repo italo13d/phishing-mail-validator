@@ -1,0 +1,8 @@
+{
+  "classification": "PHISHING",
+  "reasons": [
+    "links encurtados não oficiais redirecionando para domínios suspeitos",
+    "conteúdo de origem duvidosa e excesso de caracteres estranhos",
+    "falta de contexto sobre a legitimidade do evento mencionado"
+  ]
+}

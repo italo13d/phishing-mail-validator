@@ -1,0 +1,8 @@
+{
+  "classification": "PHISHING",
+  "reasons": [
+    "tom de urgência sem contexto",
+    "solicitação de clique em link suspeito",
+    "oferta de valor inesperadamente baixo"
+  ]
+}

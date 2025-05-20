@@ -1,0 +1,8 @@
+{
+  "classification": "SAFE",
+  "reasons": [
+    "e-mail contém informações sobre algoritmo de compressão de dados",
+    "presença de link de redirecionamento oficial para inscrição",
+    "conteúdo não sugere phishing ou solicitação de informações sensíveis"
+  ]
+}

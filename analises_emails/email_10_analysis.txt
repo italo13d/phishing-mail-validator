@@ -1,0 +1,8 @@
+{
+  "classification": "PHISHING",
+  "reasons": [
+    "link suspeito redirecionando para domínio não oficial",
+    "promoção exagerada de inteligência artificial na educação",
+    "uso de termos alarmistas e previsões exageradas sobre o futuro da educação"
+  ]
+}

